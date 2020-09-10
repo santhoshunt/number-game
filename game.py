@@ -12,7 +12,7 @@ rand=randint(1,101)
 print(rand)
 def check():
     if rand==int(ent1.get()):
-        lab2.config(text="You're RIGHT !!")
+        lab2.config(text="You're RIGHT !!",font=("bold",16))
         frame1.config(bg="green")
         lab1.config(bg="green")
         lab2.config(bg="green")
@@ -22,14 +22,14 @@ def check():
         lab2.config(text="Guess lower!")
     ent1.delete(0,END)
     
-lab1=Label(frame1,text="Guess a number between 1-100",bg="blue")
-ent1=Entry(frame1)
-but1=Button(frame1,text="Check",command=check)
-lab2=Label(frame1,text="Guess a number!",bg="blue")
+lab1=Label(frame1,text="Guess a number between 1-100",bg="blue",font=("bold",16))
+ent1=Entry(frame1,borderwidth=7)
+but1=Button(frame1,text="Check",command=check,bg="light blue")
+lab2=Label(frame1,text="Guess a number!",bg="blue",font=("bold",16))
 
-lab1.grid()
-ent1.grid()
-but1.grid()
-lab2.grid()
+lab1.grid(padx=10,pady=10)
+ent1.grid(padx=10,pady=10)
+but1.grid(padx=10,pady=10)
+lab2.grid(padx=10,pady=10)
 
 window.mainloop()
