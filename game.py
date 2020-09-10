@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox
 from random import *
 
 window=Tk()
@@ -11,11 +12,22 @@ frame1.config(bg="blue")
 rand=randint(1,101)
 print(rand)
 def check():
+    global rand
     if rand==int(ent1.get()):
         lab2.config(text="You're RIGHT !!",font=("bold",16))
         frame1.config(bg="green")
         lab1.config(bg="green")
         lab2.config(bg="green")
+        s=messagebox.askyesno("You're Right as always !!","Do you want to win again?")
+        if not s:
+            exit()
+        else:
+            frame1.config(bg="blue")
+            lab1.config(bg="blue")
+            lab2.config(bg="blue")
+            lab2.config(text="You can do it again!")
+            rand=randint(1,101)
+            print(rand)
     elif rand>int(ent1.get()):
         lab2.config(text="guess higher!")
     else:
